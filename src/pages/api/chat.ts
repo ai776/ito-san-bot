@@ -83,20 +83,40 @@ export default async function handler(
       conversation_id: responseConversationId
     })
   } catch (error: any) {
-    console.error('Dify API Error:', error.response?.data || error.message)
+    console.error('Dify API Error:', {
+      status: error.response?.status,
+      statusText: error.response?.statusText,
+      data: error.response?.data,
+      message: error.message,
+      stack: error.stack
+    })
 
     // エラーメッセージをより詳細に
     if (error.response?.status === 401) {
-      return res.status(401).json({ error: 'APIキーが無効です。環境変数を確認してください。' })
+      return res.status(401).json({ 
+        error: 'APIキーが無効です。環境変数を確認してください。',
+        details: error.response?.data?.message || 'Unauthorized'
+      })
     }
 
     if (error.response?.status === 404) {
-      return res.status(404).json({ error: 'APIエンドポイントが見つかりません。URLを確認してください。' })
+      return res.status(404).json({ 
+        error: 'APIエンドポイントが見つかりません。URLを確認してください。',
+        details: error.response?.data?.message || 'Not Found'
+      })
+    }
+
+    if (error.response?.status === 400) {
+      return res.status(400).json({
+        error: 'リクエストが無効です。',
+        details: error.response?.data?.message || JSON.stringify(error.response?.data)
+      })
     }
 
     res.status(500).json({
       error: 'チャットボットとの通信に失敗しました。',
-      details: error.response?.data?.message || error.message
+      details: error.response?.data?.message || error.message || 'Unknown error',
+      status: error.response?.status
     })
   }
 }

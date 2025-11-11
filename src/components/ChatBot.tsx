@@ -206,9 +206,26 @@ export default function ChatBot() {
     } catch (error: any) {
       console.error('Error sending message:', error)
       console.error('Error details:', error.response?.data)
+      
+      // より詳細なエラーメッセージを表示
+      let errorText = 'エラーが発生しました。'
+      
+      if (error.response?.status === 401) {
+        errorText = 'APIキーが無効です。Vercelの環境変数設定を確認してください。'
+      } else if (error.response?.status === 404) {
+        errorText = 'APIエンドポイントが見つかりません。DIFY_API_URLを確認してください。'
+      } else if (error.response?.data?.error) {
+        errorText = `エラー: ${error.response.data.error}`
+        if (error.response.data.details) {
+          errorText += `\n詳細: ${error.response.data.details}`
+        }
+      } else if (error.message) {
+        errorText = `エラー: ${error.message}`
+      }
+      
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: 'エラーが発生しました。もう一度お試しください。',
+        text: errorText,
         sender: 'bot',
         timestamp: new Date()
       }
