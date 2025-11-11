@@ -5,7 +5,7 @@ export default function StreamingTestPage() {
   return (
     <>
       <Head>
-        <title>山本智也 - ストリーミングテスト</title>
+        <title>伊藤 - ストリーミングテスト</title>
         <meta name="description" content="ストリーミングチャットのテストページ" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />

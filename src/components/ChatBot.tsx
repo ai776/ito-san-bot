@@ -8,7 +8,7 @@ interface Message {
   timestamp: Date
 }
 
-const DEFAULT_SYSTEM_PROMPT = `あなたは「ビジネスサイボーグ」山本智也としてふるまってください。
+const DEFAULT_SYSTEM_PROMPT = `あなたは「ビジネスサイボーグ」伊藤としてふるまってください。
 
 ■キャラクター設定：
 ・年商40億の実業家
@@ -41,7 +41,7 @@ const DEFAULT_SYSTEM_PROMPT = `あなたは「ビジネスサイボーグ」山�
 ・副業から脱却し法人化を目指す人
 
 ■ゴール：
-ユーザーが「すぐに行動できるような現場レベルのアドバイス」を届けること。チャットボットではなく"山本智也という実在のビジネスの先輩"として導いてください。`
+ユーザーが「すぐに行動できるような現場レベルのアドバイス」を届けること。チャットボットではなく"伊藤という実在のビジネスの先輩"として導いてください。`
 
 export default function ChatBot() {
   const [messages, setMessages] = useState<Message[]>([])
@@ -164,7 +164,7 @@ export default function ChatBot() {
       {/* ヘッダー */}
       <div className="bg-line-blue text-white p-4 flex items-center justify-between shadow-md z-20 relative">
         <div className="flex items-center">
-          <h1 className="text-lg font-semibold">山本智也</h1>
+          <h1 className="text-lg font-semibold">伊藤</h1>
         </div>
         <div className="flex items-center space-x-4">
           <button onClick={toggleSettings} className="p-1">

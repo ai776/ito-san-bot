@@ -125,7 +125,7 @@ X-Accel-Buffering: no
 #### データ形式
 ```javascript
 data: {"event":"message","answer":"こんにちは","conversation_id":"xxx","message_id":"yyy"}
-data: {"event":"message","answer":"、山本です","conversation_id":"xxx","message_id":"yyy"}
+data: {"event":"message","answer":"、伊藤です","conversation_id":"xxx","message_id":"yyy"}
 data: [DONE]
 ```
 

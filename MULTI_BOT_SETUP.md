@@ -2,7 +2,7 @@
 
 ## 概要
 このアプリケーションは4つの専門的なAIボットを提供します：
-1. **山本さんボット** - チャットボット
+1. **伊藤さんボット** - チャットボット
 2. **X投稿用ボット** - X（旧Twitter）の投稿文作成
 3. **Facebook投稿用ボット** - Facebook投稿文作成
 4. **自己紹介文作成ボット** - プロフィール文の作成
@@ -14,7 +14,7 @@
 `.env.local`ファイルを作成し、以下の環境変数を設定してください：
 
 ```bash
-# ①山本さんボット（チャットボット）
+# ①伊藤さんボット（チャットボット）
 DIFY_API_KEY=your-chatbot-api-key-here
 DIFY_API_URL=https://api.dify.ai/v1
 
@@ -44,7 +44,7 @@ Vercelダッシュボードで以下の環境変数を設定：
 
 | 変数名 | 説明 | 必須 |
 |--------|------|------|
-| `DIFY_API_KEY` | 山本さんボット用APIキー | ✅ |
+| `DIFY_API_KEY` | 伊藤さんボット用APIキー | ✅ |
 | `DIFY_API_URL` | Dify APIエンドポイント | ✅ |
 | `DIFY_X_API_KEY` | X投稿用APIキー | ⭕ |
 | `DIFY_X_API_URL` | X用APIエンドポイント | ⭕ |
@@ -61,7 +61,7 @@ Vercelダッシュボードで以下の環境変数を設定：
 
 1. **Difyダッシュボード**にログイン
 2. 各用途に応じたアプリを作成：
-   - 山本さんボット: 対話型チャットボット設定
+   - 伊藤さんボット: 対話型チャットボット設定
    - X投稿: 140-280文字の短文生成に最適化
    - Facebook投稿: エンゲージメント重視の文章生成
    - 自己紹介文: プロフェッショナルな文章生成
@@ -120,7 +120,7 @@ src/
 │   ├── multi-bot.tsx           # マルチボットページ
 │   └── api/
 │       └── multi-bot/
-│           ├── yamamoto.ts     # 山本さんボットAPI
+│           ├── yamamoto.ts     # 伊藤さんボットAPI
 │           ├── x.ts            # X投稿API
 │           ├── facebook.ts     # Facebook投稿API
 │           └── profile.ts      # 自己紹介文API
@@ -130,7 +130,7 @@ src/
 
 各ボットは独自のAPIエンドポイントを持ちます：
 
-- `/api/multi-bot/yamamoto` - 山本さんボット
+- `/api/multi-bot/yamamoto` - 伊藤さんボット
 - `/api/multi-bot/x` - X投稿用
 - `/api/multi-bot/facebook` - Facebook投稿用
 - `/api/multi-bot/profile` - 自己紹介文作成

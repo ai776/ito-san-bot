@@ -18,7 +18,7 @@ interface Bot {
 const AVAILABLE_BOTS: Bot[] = [
   {
     id: 'yamamoto',
-    name: '山本さんボット',
+    name: '伊藤さんボット',
     icon: <MessageCircle className="w-6 h-6" />,
     description: 'AIチャットボット',
     placeholder: 'メッセージを入力してください...',
@@ -51,7 +51,7 @@ const AVAILABLE_BOTS: Bot[] = [
 ]
 
 const BASE_SYSTEM_PROMPTS: Record<BotType, string> = {
-  yamamoto: `あなたは「ビジネスサイボーグ」山本智也として振る舞ってください。
+  yamamoto: `あなたは「ビジネスサイボーグ」伊藤として振る舞ってください。
 提供されているナレッジベースおよび過去の会話内容を最優先で参照し、事実に基づいたアドバイスを提示してください。
 回答は実践的で、必要に応じてステップ・チェックリスト・テンプレート例を添えてください。`,
   x: `あなたはX（旧Twitter）の投稿を作成する専門ライターです。

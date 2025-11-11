@@ -5,7 +5,7 @@ export default function Debug() {
   return (
     <>
       <Head>
-        <title>山本智也 - デバッグモード</title>
+        <title>伊藤 - デバッグモード</title>
         <meta name="description" content="チャットボットのデバッグページ" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>

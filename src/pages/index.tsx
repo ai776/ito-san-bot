@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>山本智也 - チャットボット</title>
+        <title>伊藤 - チャットボット</title>
         <meta name="description" content="DifyベースのAIチャットボット" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
